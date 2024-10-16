@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Що подивимось?</title>
+    <style>
+        body {
+            background-color: pink;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            background-color: white;
+            border: 2px solid pink;
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        img {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Що подивимось?</h1>
+    <button onclick="saveMovie('La La Land')"><img src="https://example.com/lalaland.png" alt="La La Land">La La Land</button>
+    <button onclick="saveMovie('Велика риба')"><img src="https://example.com/bigfish.png" alt="Велика риба">Велика риба</button>
+    <button onclick="saveMovie('Перед заходом сонця')"><img src="https://example.com/sunset.png" alt="Перед заходом сонця">Перед заходом сонця</button>
+    <button onclick="saveMovie('Книга Джунглів')"><img src="https://example.com/junglebook.png" alt="Книга Джунглів">Книга Джунглів (2016)</button>
+    <button onclick="saveMovie('Рататуй')"><img src="https://example.com/ratatouille.png" alt="Рататуй">Рататуй</button>
+
+    <script>
+        function saveMovie(movie) {
+            localStorage.setItem('movieChoice', movie);
+            window.location.href = 'page6.html'; // Перехід на наступну сторінку
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Побачення?</title>
+    <style>
+        body {
+            background-color: pink;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            margin-top: 100px;
+        }
+        button {
+            background-color: white;
+            border: 2px solid pink;
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Сходиш зі мною на побачення?</h1>
+    <button onclick="nextPage()">ТАК!</button>
+    <button onclick="nextPage()">ТАК!</button>
+
+    <script>
+        function nextPage() {
+            window.location.href = 'page2.html';
+        }
+    </script>
+</body>
+</html>

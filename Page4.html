@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Що будем їсти?</title>
+    <style>
+        body {
+            background-color: pink;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            background-color: white;
+            border: 2px solid pink;
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        img {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Що будем їсти?</h1>
+    <button onclick="saveChoice('Стейки')"><img src="https://example.com/steak.png" alt="Стейки">Стейки</button>
+    <button onclick="saveChoice('Морозиво')"><img src="https://example.com/icecream.png" alt="Морозиво">Морозиво</button>
+    <button onclick="saveChoice('Суші')"><img src="https://example.com/sushi.png" alt="Суші">Суші</button>
+    <button onclick="saveChoice('Бургери')"><img src="https://example.com/burger.png" alt="Бургери">Бургери</button>
+
+    <script>
+        function saveChoice(food) {
+            localStorage.setItem('foodChoice', food);
+            window.location.href = 'page5.html'; // Перехід на наступну сторінку
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коли ти вільна?</title>
+    <style>
+        body {
+            background-color: pink;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 18px;
+        }
+        button {
+            background-color: white;
+            border: 2px solid pink;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Коли ти вільна?</h1>
+    <label for="date">Оберіть дату:</label>
+    <input type="date" id="date">
+
+    <label for="time">Оберіть час:</label>
+    <input type="time" id="time">
+
+    <button onclick="saveDateTime()">Продовжити</button>
+
+    <script>
+        function saveDateTime() {
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            if (date && time) {
+                localStorage.setItem('dateChoice', date);
+                localStorage.setItem('timeChoice', time);
+                window.location.href = 'page4.html'; // Перехід на наступну сторінку
+            } else {
+                alert("Будь ласка, виберіть дату і час.");
+            }
+        }
+    </script>
+</body>
+</html>

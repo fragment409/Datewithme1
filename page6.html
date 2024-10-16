@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love u!</title>
+    <style>
+        body {
+            background-color: pink;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            background-color: white;
+            border: 2px solid pink;
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Love u!</h1>
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Радісний котик">
+    <br>
+    <button onclick="downloadChoices()">Love u <3</button>
+
+    <script>
+        function downloadChoices() {
+            // Отримуємо вибір з localStorage
+            const food = localStorage.getItem('foodChoice');
+            const movie = localStorage.getItem('movieChoice');
+            const date = localStorage.getItem('dateChoice');  // Відповідно до вибору на попередніх сторінках
+            const time = localStorage.getItem('timeChoice');
+
+            // Створюємо текст для файлу
+            const content = `Вибір їжі: ${food}\nВибір фільму: ${movie}\nДата: ${date}\nЧас: ${time}\n`;
+
+            // Створюємо файл і дозволяємо його завантажити
+            const blob = new Blob([content], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'choices.txt';
+            link.click();
+        }
+    </script>
+</body>
+</html>
